@@ -142,10 +142,9 @@ Anschließend werden sämtliche i18n Klassen mit dem JQuery Befehl: $(".i18n").e
  
 Eine kleine, knackige Lösung, wie ich finde.
  
-```bash
-    AUSBLICK: Mit dieser Lösung könnte man mit einem einfachen $.ajax Call selbstverständlich die JSON-Datei auch auf einem externen Server auslagern und somit (völlig unabhängig von der App)
-    Übersetzungen und Aktualisierungen bearbeiten…
-```
+### AUSBLICK:
+Mit dieser Lösung könnte man mit einem einfachen $.ajax Call selbstverständlich die JSON-Datei auch auf einem externen Server auslagern und somit (völlig unabhängig von der App)
+Übersetzungen und Aktualisierungen bearbeiten…
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
