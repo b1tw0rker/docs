@@ -61,7 +61,7 @@ $ git config advice.addIgnoredFile false
 Git wird die benötigten Passwörter aus dem loklane, globalen Cache
 holen.
 
-## Tipp:
+### Tipp:
 Um Word Dateien nach Markdown zu konvertieren, nutze: ‚pandoc‘ 
 ( https://christiantietze.de/posts/2019/07/convert-docx-to-markdown/ )
 
@@ -69,10 +69,6 @@ Um Word Dateien nach Markdown zu konvertieren, nutze: ‚pandoc‘
 ```bash
 $ pandoc -o output.md --extract-media=./ inputfile.docx
 ```
-
-
-Some Pic
-![Poweradmin in darkmode](https://www.bit-worker.com/assets/img/poweradmin.jpg)
 
 
 ## License
