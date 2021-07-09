@@ -1,4 +1,4 @@
-**Ein existierendes Projekt nach Github migrieren**
+# Ein existierendes Projekt nach Github migrieren
 
 Ein neues Repository auf github.com erstellen. Nicht README, license
 oder .gitignore initialisieren (Siehe Bild)
@@ -16,7 +16,7 @@ askpass verfügbar ist.
 
 ![](.//media/image2.jpg){width="6.3in" height="2.3743055555555554in"}
 
-**Git.sh**\
+##Git.sh
 Mit diesem kleinen Script kannst du Änderungen automatisch nach
 github.com auschecken.
 
@@ -28,3 +28,14 @@ folgendem Befehl gelöst werden:
 
 Git wird die benötigten Passwörter aus dem loklane, globalen Cache
 holen.
+
+```bash
+$ some command
+```
+
+Some Pic
+![Poweradmin in darkmode](https://www.bit-worker.com/assets/img/poweradmin.jpg)
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
