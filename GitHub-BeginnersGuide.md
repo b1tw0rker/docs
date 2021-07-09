@@ -3,9 +3,8 @@
 Ein neues Repository auf github.com erstellen. Nicht README, license
 oder .gitignore initialisieren (Siehe Bild)
 
-![](.//media/image1.jpeg =250x)
+![Create an new Repo](.//media/image1.jpeg)
 
-<img src="media/image1.jpeg" width="70%">
 
 **Achtung:** github liefert nach Erstellung eine Anleitung mit ‚main'
 als branch. Wir wollen aber ‚master' als branch. Entsprechend ist das
@@ -30,7 +29,7 @@ $ git push -u origin master
 Em Ende fragt github.com nach Usernamen und Password, falls es nicht im
 askpass verfügbar ist.
 
-![](.//media/image2.jpg){width="6.3in" height="2.3743055555555554in"}
+![Ask for pass](.//media/image2.jpg)
 
 ### git.sh
 Mit diesem kleinen Script kannst du Änderungen automatisch nach
