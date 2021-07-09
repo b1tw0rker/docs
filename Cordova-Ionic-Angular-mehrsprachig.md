@@ -4,7 +4,7 @@
 
 
 Requirements:
-Cordova || Ionic || Angular && JQuery
+Cordova | Ionic | Angular | JQuery
              
 Auf der Suche im Web, nach einer vernünftigen Localization-Lösung für Cordova, Ionic bzw. Angular war ich nicht erfolgreich.
 Oops, so viel neue Technik und so schlechte Doku im Netz. Na gut..., muss ich es mir halt selbst besorgen...
@@ -35,8 +35,9 @@ console.log('Error getting language\n');
  Auf dieses Plugin kann nun komplett verzichtet werden.
  Siehe dazu auch hier: <a href="https://cordova.apache.org/news/2017/11/20/migrate-from-cordova-globalization-plugin.html" target="_blank">Migration from the Globalization Plugin</a>
  Die Internationalization API von Browser lässt sich stabil ausführen, wenn (wie üblich) das „deviceready“ Statement "abgefeuert" wurde.
-  
- Check this out:
+ 
+
+### Check this out:
 
 ```bash
 document.addEventListener("deviceready", function() {
@@ -48,7 +49,6 @@ alert(navigator.language);
 }
 }, false);
 ```
-       
 
 Je nach Sprache und Browser liefert navigator.language verschiedene Landeskürzel (de, de-DE, en, en-US, fr, fr-FR etc.).
 Daraus extrahiere ich eine Variable, mit der später die entsprechende JSON-Datei, mit den eigentlichen Übersetzungen, geladen wird.
@@ -136,19 +136,15 @@ $.getJSON(url, function(data){
 
 ```
 
-          
-
 Gar nicht so spektugal eigentlich :-)
 Die Funktion "seti18n" lädt per $.getJSON Befehl, die entsprechende JSON-Datei und <i>"parkt"</i> den Inhalt in der Variable ‚data‘.
 Anschließend werden sämtliche i18n Klassen mit dem JQuery Befehl: $(".i18n").each(function() identifiziert, und die JSON-Strings entsprechend eingesetzt.
  
- 
 Eine kleine, knackige Lösung, wie ich finde.
- 
  
 ```bash
     AUSBLICK: Mit dieser Lösung könnte man mit einem einfachen $.ajax Call selbstverständlich die JSON-Datei auch auf einem externen Server auslagern und somit (völlig unabhängig von der App)
-    Übersetzungen und Aktualisierungen bearbeiten…</p>
+    Übersetzungen und Aktualisierungen bearbeiten…
 ```
 
 ### License
