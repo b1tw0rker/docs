@@ -86,7 +86,7 @@ seti18n(url); // fire Language-Chooser function with detected url
      
 
 Die Übersetzungen befinden sich im Ordner: www/i18n/ und heißen de.json, en.json, etc.
-<img src="https://www.bit-worker.com/web/assets/img/blog/i18n.jpg" width="350" alt="json - ordner der einzelnen dateien">
+<img src="https://www.bit-worker.com/web/assets/img/blog/i18n.jpg" width="350">
 
 Die jeweilige JSON-Datei hat folgendes Format:
 JSON-Datei:
@@ -107,19 +107,18 @@ JSON-Datei:
          
 
           
-Vorbereitung der HTML-Datei:
-
+### Vorbereitung der HTML-Datei:
 Alle Tags, die potentiell übersetzt werden sollen, bekommen die Klasse ‚i18n‘ sowiedas ‚data-i18n‘ Attribut verpasst.
 Nun kommt der nächste Fallback ins Spiel. Kann die JSON-Datei aus irgend einem Grund nicht geladen werden, wird immer noch der Node-Wert aus dem HTML-Tag verwendet.
 
-Beispiel eines Button-Tag:
-
+### Beispiel eines Button-Tag:
+```bash
 &lt;button class=&quot;i18n&quot; data-i18n=&quot;submit&quot; type=&quot;submit&quot;&gt;Abschicken&lt;/button&gt;
-
+```
 
 Das data-i18n Attribut definiert, welches JSON-Objekt eingefügt werden soll. In dem Fall unseres Beispiel Buttons ist dies das Objekt „submit“ --> Also: "submit": "Abschicken"
 
-Let's Check the "seti18n" Function:
+### Let's Check the "seti18n" Function:
 
 ```bash
 function seti18n(url) {
