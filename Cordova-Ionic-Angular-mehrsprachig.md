@@ -1,15 +1,10 @@
-
 # Cordova/Ionic/Angular App mehrsprachig mit der Internationalization API.
 
 <!-- https://www.bit-worker.com/web/blog-cordova-ionic-angular-internationalization-api.html -->
 
-<article>
-    <div class="article-content">
-      <p>
-            <div class="blog-command">
             Requirements:
             Cordova || Ionic || Angular && JQuery
-             </div>
+             
 
 Auf der Suche im Web, nach einer vernünftigen Localization-Lösung für Cordova, Ionic bzw. Angular war ich nicht erfolgreich.
 Oops, so viel neue Technik und so schlechte Doku im Netz. Na gut..., muss ich es mir halt selbst besorgen...
@@ -22,37 +17,37 @@ Ich versuche mit diesem Artikel eine moderne Variante für Übersetzungen aufzuz
 <br>
 <br>
 
-<b>Mal vorab:</b> Zur Localization von Cordova-Apps wird das <a href="https://github.com/apache/cordova-plugin-globalization" target="_blank">Globalization Plugin</a> von Apache/Cordova <b>nicht</b> mehr benötigt.
+### Vorab:
+Zur Localization von Cordova-Apps wird das <a href="https://github.com/apache/cordova-plugin-globalization" target="_blank">Globalization Plugin</a> von Apache/Cordova <b>nicht</b> mehr benötigt.
 Das Plugin wird über kurz oder lang aus dem Plugin-Repository von Cordova und Ionic rausfliegen.
 Moderne Browser liefern eine Localization von Haus aus mit. Und mit meiner Lösung existiert immer noch ein Fallback,
 falls der Browser wider Erwarten doch keine Localization ausliefert.
 Das Plugin bzw. die Technik, die der Browser mitliefert, nennt sich: „<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl" target="_blank">Internationalization API</a>“.
 
-      </p>
-      <p>
+
         Die Programmierung verlief früher wie folgt: In Cordova wurde das Globalization-Plugin implementiert und mit folgendem Script ermittelt welche
         Sprache der lokale Browser verwendet:
 
-<div class="blog-command">
-<pre>
-navigator.globalization.getPreferredLanguage(function (language) {     
+```bash
+navigator.globalization.getPreferredLanguage(function (language) {
 console.log('language: ' + language.value + '\n');
 }, function () {
 console.log('Error getting language\n');
 });
-</pre>                        
-        </div>
+```
+
+        
         Auf dieses Plugin kann nun komplett verzichtet werden.
 
         Siehe dazu auch hier: <a href="https://cordova.apache.org/news/2017/11/20/migrate-from-cordova-globalization-plugin.html" target="_blank">Migration from the Globalization Plugin</a>
         <br>
-        
+
         Die Internationalization API von Browser lässt sich stabil ausführen, wenn (wie üblich) das <b>„deviceready“</b> Statement "abgefeuert" wurde.
         <br>
         <br>
         <b>Check this out:</b>
-        <div class="blog-command">
-<pre>
+
+```bash
 document.addEventListener("deviceready", function() {
 if (window.Intl && typeof window.Intl === 'object') {
 
@@ -61,23 +56,22 @@ alert(navigator.language);
 
 }
 }, false);
-</pre>                                             
-        </div>
-      </p>
+```
 
+        
 
-      <p>
             Je nach Sprache und Browser liefert <b>navigator.language</b> verschiedene Landeskürzel (de, de-DE, en, en-US, fr, fr-FR etc.).
             Daraus extrahiere ich eine Variable, mit der später die entsprechende JSON-Datei, mit den eigentlichen Übersetzungen, geladen wird.
-            
-          <div class="blog-command">
-<pre>
+
+
+
+```bash
 document.addEventListener("deviceready", function() {
 
 if (window.Intl && typeof window.Intl === 'object') {
 
 console.log("%cAPI available. Lan: " + navigator.language + "", "color: green");
-               
+
 // URL implementieren
 if (navigator.language == "de" || navigator.language == "de-DE") {
 var url = "i18n/de.json";
@@ -87,31 +81,32 @@ var url = "i18n/en.json";
 // Fallback für alle anderen Sprachen
 var url = "i18n/en.json";
 }
-                    
+
 } else {
 // Fallback - Falls die API keine Sprache liefert.
 var url = "i18n/en.json";
 }
-                
-                  
+
+
 seti18n(url); // fire Language-Chooser function with detected url
-                 
+
 }, false);
 
-</pre>
-          </div>
+```
+
+          
 
           Die Übersetzungen befinden sich im Ordner: <b>www/i18n/</b> und heißen <b>de.json</b>, <b>en.json</b>, etc.
           <br>
           <br>
           <img src="assets/img/blog/i18n.jpg" style="width: 350px;" alt="json - ordner der einzelnen dateien">
-          
+
           <br>
           <br>
           Die jeweilige JSON-Datei hat folgendes Format:<br>
           <b>JSON-Datei:</b>
-          <div class="blog-command">
-<pre>
+
+```bash
 {
 "Strings": [
 {
@@ -122,9 +117,10 @@ seti18n(url); // fire Language-Chooser function with detected url
 }
 ]
 }
-</pre>
-          </div>
-          
+```
+
+         
+
           <br>
           Vorbereitung der HTML-Datei:<br><br>
 
@@ -135,9 +131,8 @@ Nun kommt der nächste Fallback ins Spiel. Kann die JSON-Datei aus irgend einem 
 <b>Beispiel eines Button-Tag:</b>
 <br>
 
-<div class="blog-command">
 &lt;button <b>class=&quot;i18n</b>&quot; <b>data-i18n=&quot;submit&quot;</b> type=&quot;submit&quot;&gt;Abschicken&lt;/button&gt;
-</div>
+
 
 
 Das data-i18n Attribut definiert, welches JSON-Objekt eingefügt werden soll. In dem Fall unseres Beispiel Buttons ist dies das Objekt „submit“ --> Also: "submit": "Abschicken"
@@ -145,22 +140,23 @@ Das data-i18n Attribut definiert, welches JSON-Objekt eingefügt werden soll. In
 <br>
 Let's Check the <b>"seti18n"</b> Function:
 
-<div class="blog-command">
-<pre>
+```bash
 function seti18n(url) {
 
-$.getJSON(url, function(data){    
-$(".i18n").each(function(){
-$(this).html(data.Strings[0][$(this).data("i18n")]);
-$(this).attr("placeholder",data.Strings[0][$(this).data("i18n-ph")]);   // i18n-ph für placeholder Übersetzungen only
-$(this).attr("value",data.Strings[0][$(this).data("i18n-val")]); // i18n-val für input value Übersetzungen only
-});
+$.getJSON(url, function(data){
+    $(".i18n").each(function(){
+    $(this).html(data.Strings[0][$(this).data("i18n")]);
+    $(this).attr("placeholder",data.Strings[0][$(this).data("i18n-ph")]); // i18n-ph für placeholder Übersetzungen only
+    $(this).attr("value",data.Strings[0][$(this).data("i18n-val")]); // i18n-val für input value Übersetzungen only
+  });
 });
 
 }
-</pre>                          
-          </div>                  
+
+```
+
           
+
           Gar nicht so spektugal eigentlich :-)<br><br>
           Die Funktion <b>"seti18n"</b> lädt per <b>$.getJSON</b> Befehl, die entsprechende JSON-Datei und <i>"parkt"</i> den Inhalt in der Variable <b>‚data‘</b>.
           Anschließend werden sämtliche <b>i18n</b> Klassen mit dem JQuery Befehl: <b>$(".i18n").each(function()</b> identifiziert, und die JSON-Strings entsprechend eingesetzt.
@@ -170,14 +166,11 @@ $(this).attr("value",data.Strings[0][$(this).data("i18n-val")]); // i18n-val fü
           <br>
           <br>
 
-            <blockquote class="blockquote">
+            ```bash
                     <p class="mb-0"><b>AUSBLICK: </b>Mit dieser Lösung könnte man mit einem einfachen <b>$.ajax</b> Call selbstverständlich die JSON-Datei auch auf einem externen Server auslagern und somit (völlig unabhängig von der App)
                       Übersetzungen und Aktualisierungen bearbeiten…</p>
-            </blockquote>
+         ```
 
-          
-   
+### License
 
-          
-    </div>
-   </article> 
+[MIT](https://choosealicense.com/licenses/mit/)
