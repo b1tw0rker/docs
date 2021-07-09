@@ -86,7 +86,7 @@ seti18n(url); // fire Language-Chooser function with detected url
      
 
 Die Übersetzungen befinden sich im Ordner: www/i18n/ und heißen de.json, en.json, etc.
-<img src="https://www.bit-worker.com/web/assets/img/blog/i18n.jpg" style="width: 350px;" alt="json - ordner der einzelnen dateien">
+<img src="https://www.bit-worker.com/web/assets/img/blog/i18n.jpg" style="width: 300px;" alt="json - ordner der einzelnen dateien">
 
 Die jeweilige JSON-Datei hat folgendes Format:
 JSON-Datei:
