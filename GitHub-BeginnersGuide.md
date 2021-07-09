@@ -3,7 +3,7 @@
 Ein neues Repository auf github.com erstellen. Nicht README, license
 oder .gitignore initialisieren (Siehe Bild)
 
-![Create an new Repo](.//media/image1.jpeg){ width=50% }
+![Create an new Repo](.//media/image1.jpeg)
 
 
 **Achtung:** github liefert nach Erstellung eine Anleitung mit ‚main'
@@ -29,7 +29,16 @@ $ git push -u origin master
 Em Ende fragt github.com nach Usernamen und Password, falls es nicht im
 askpass verfügbar ist.
 
-![Ask for pass](.//media/image2.jpg)
+```bash
+(gnome-ssh-askpass:30112): Gtk-WARNING **: 17:12:10.921: cannot open display:
+error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'
+Username for 'https://github.com': bitw0rker
+
+(gnome-ssh-askpass:30113): Gtk-WARNING **: 17:12:22.007: cannot open display:
+error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'
+Password for 'https://bitw0rker@github.com':
+```
+
 
 ### git.sh
 Mit diesem kleinen Script kannst du Änderungen automatisch nach
