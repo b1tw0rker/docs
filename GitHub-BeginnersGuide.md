@@ -3,7 +3,7 @@
 Ein neues Repository auf github.com erstellen. Nicht README, license
 oder .gitignore initialisieren (Siehe Bild)
 
-![](.//media/image1.jpeg){width="6.3in" height="4.9222222222222225in"}
+![Create a new Repo](.//media/image1.jpeg =250x)
 
 **Achtung:** github liefert nach Erstellung eine Anleitung mit ‚main'
 als branch. Wir wollen aber ‚master' als branch. Entsprechend ist das
@@ -30,7 +30,7 @@ askpass verfügbar ist.
 
 ![](.//media/image2.jpg){width="6.3in" height="2.3743055555555554in"}
 
-## Git.sh
+### git.sh
 Mit diesem kleinen Script kannst du Änderungen automatisch nach
 github.com auschecken.
 
@@ -71,5 +71,5 @@ $ pandoc -o output.md --extract-media=./ inputfile.docx
 ```
 
 
-## License
+### License
 [MIT](https://choosealicense.com/licenses/mit/)
