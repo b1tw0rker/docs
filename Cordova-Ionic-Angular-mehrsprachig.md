@@ -25,9 +25,9 @@ Sprache der lokale Browser verwendet:
 
 ```bash
 navigator.globalization.getPreferredLanguage(function (language) {
-console.log('language: ' + language.value + '\n');
-}, function () {
-console.log('Error getting language\n');
+  console.log('language: ' + language.value + '\n');
+  }, function () {
+    console.log('Error getting language\n');
 });
 ```
 
@@ -41,12 +41,10 @@ console.log('Error getting language\n');
 
 ```bash
 document.addEventListener("deviceready", function() {
-if (window.Intl && typeof window.Intl === 'object') {
-
-console.log("%cAPI available. Detected Lan: " + navigator.language + "", "color: green");
-alert(navigator.language);
-
-}
+  if (window.Intl && typeof window.Intl === 'object') {
+    console.log("%cAPI available. Detected Lan: " + navigator.language + "", "color: green");
+    alert(navigator.language);
+  }
 }, false);
 ```
 
@@ -57,27 +55,26 @@ Daraus extrahiere ich eine Variable, mit der später die entsprechende JSON-Date
 ```bash
 document.addEventListener("deviceready", function() {
 
-if (window.Intl && typeof window.Intl === 'object') {
+  if (window.Intl && typeof window.Intl === 'object') {
 
-console.log("%cAPI available. Lan: " + navigator.language + "", "color: green");
+  console.log("%cAPI available. Lan: " + navigator.language + "", "color: green");
 
-// URL implementieren
-if (navigator.language == "de" || navigator.language == "de-DE") {
-var url = "i18n/de.json";
-} else if (navigator.language == "en" || navigator.language == "en-US") {
-var url = "i18n/en.json";
-} else {
-// Fallback für alle anderen Sprachen
-var url = "i18n/en.json";
-}
+  // URL implementieren
+  if (navigator.language == "de" || navigator.language == "de-DE") {
+    var url = "i18n/de.json";
+  } else if (navigator.language == "en" || navigator.language == "en-US") {
+    var url = "i18n/en.json";
+  } else {
+    // Fallback für alle anderen Sprachen
+    var url = "i18n/en.json";
+  }
 
-} else {
-// Fallback - Falls die API keine Sprache liefert.
-var url = "i18n/en.json";
-}
+  } else {
+  // Fallback - Falls die API keine Sprache liefert.
+  var url = "i18n/en.json";
+  }
 
-
-seti18n(url); // fire Language-Chooser function with detected url
+  seti18n(url); // fire Language-Chooser function with detected url
 
 }, false);
 
