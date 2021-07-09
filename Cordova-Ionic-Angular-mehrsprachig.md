@@ -86,7 +86,7 @@ seti18n(url); // fire Language-Chooser function with detected url
      
 
 Die Übersetzungen befinden sich im Ordner: www/i18n/ und heißen de.json, en.json, etc.
-<img src="assets/img/blog/i18n.jpg" style="width: 350px;" alt="json - ordner der einzelnen dateien">
+<img src="https://www.bit-worker.com/web/assets/img/blog/i18n.jpg" style="width: 350px;" alt="json - ordner der einzelnen dateien">
 
 Die jeweilige JSON-Datei hat folgendes Format:
 JSON-Datei:
@@ -142,7 +142,7 @@ Anschließend werden sämtliche i18n Klassen mit dem JQuery Befehl: $(".i18n").e
  
 Eine kleine, knackige Lösung, wie ich finde.
  
-### AUSBLICK:
+### AUSBLICK
 Mit dieser Lösung könnte man mit einem einfachen $.ajax Call selbstverständlich die JSON-Datei auch auf einem externen Server auslagern und somit (völlig unabhängig von der App)
 Übersetzungen und Aktualisierungen bearbeiten…
 
