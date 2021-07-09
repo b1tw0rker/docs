@@ -3,7 +3,7 @@
 Ein neues Repository auf github.com erstellen. Nicht README, license
 oder .gitignore initialisieren (Siehe Bild)
 
-![Create a new Repo](.//media/image1.jpeg =250x)
+![](.//media/image1.jpeg =250x)
 
 **Achtung:** github liefert nach Erstellung eine Anleitung mit ‚main'
 als branch. Wir wollen aber ‚master' als branch. Entsprechend ist das
