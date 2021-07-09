@@ -5,7 +5,7 @@ oder .gitignore initialisieren (Siehe Bild)
 
 ![](.//media/image1.jpeg =250x)
 
-<img src="media/image1.jpeg" width="250">
+<img src="media/image1.jpeg" width="400">
 
 **Achtung:** github liefert nach Erstellung eine Anleitung mit ‚main'
 als branch. Wir wollen aber ‚master' als branch. Entsprechend ist das
