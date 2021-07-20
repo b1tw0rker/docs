@@ -15,13 +15,13 @@ cd /lokales/projektverzeichnis
 ```
 
 ```bash
-$ echo "# vsftpd" >> README.md
-$ git init
-$ git add README.md
-$ git commit -m "first commit"
-$ git branch -M master
-$ git remote add origin https://github.com/b1tw0rker/name-des-repository.git
-$ git push -u origin master
+echo "# vsftpd" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/b1tw0rker/name-des-repository.git
+git push -u origin master
 ```
 
 
@@ -46,11 +46,11 @@ github.com auschecken.
 
 
 ```bash
-$ cd /dein/loklaer/projektordner
-$ git add *
-$ git commit -m "initial version"
-$ git push origin master
-$ exit 0
+cd /dein/loklaer/projektordner
+git add *
+git commit -m "initial version"
+git push origin master
+exit 0
 ```
 
 Füge in .gitignore ‚git.sh' zu, damit die Datei nicht mit ins Repository
@@ -62,9 +62,9 @@ folgendem Befehl gelöst werden:
 
 
 ```bash
-$ git config credential.helper store
+git config credential.helper store
 # Noisy Warnmeldung loswerden
-$ git config advice.addIgnoredFile false
+git config advice.addIgnoredFile false
 ```
 
 
@@ -77,7 +77,7 @@ Um Word Dateien nach Markdown zu konvertieren, nutze: ‚pandoc‘
 
 
 ```bash
-$ pandoc -o output.md --extract-media=./ inputfile.docx
+pandoc -o output.md --extract-media=./ inputfile.docx
 ```
 
 
