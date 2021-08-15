@@ -20,7 +20,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin https://github.com/b1tw0rker/name-des-repository.git
+git remote add origin https://github.com/USERNAME/name-des-repository.git
 git push -u origin master
 ```
 
