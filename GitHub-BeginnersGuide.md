@@ -46,7 +46,7 @@ github.com auschecken.
 
 
 ```bash
-cd /dein/loklaer/projektordner
+cd /your/lokal/projectfolder
 git add *
 git commit -m "initial version"
 git push origin master
