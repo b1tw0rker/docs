@@ -71,15 +71,6 @@ git config advice.addIgnoredFile false
 Git wird die benötigten Passwörter aus dem loklane, globalen Cache
 holen.
 
-### Tipp:
-Um Word Dateien nach Markdown zu konvertieren, nutze: ‚pandoc‘ 
-( https://christiantietze.de/posts/2019/07/convert-docx-to-markdown/ )
-
-
-```bash
-pandoc -o output.md --extract-media=./ inputfile.docx
-```
-
 ### Token 
 
 Seit dem 14.8.2021 akzeptiert github keine Passwörter mehr zur Übertragung der Daten. Du musst ein Token im Bereich:
