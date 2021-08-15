@@ -41,12 +41,12 @@ Password for 'https://bitw0rker@github.com':
 
 
 ### git.sh
-Mit diesem kleinen Script kannst du Änderungen automatisch nach
-github.com auschecken.
+Mit diesem kleinen Helper Script kannst du Änderungen automatisch nach github.com auschecken.
 
+cd /your/lokal/projectfolder
 
 ```bash
-cd /your/lokal/projectfolder
+#!/bin/bash
 git add *
 git commit -m "initial version"
 git push origin master
