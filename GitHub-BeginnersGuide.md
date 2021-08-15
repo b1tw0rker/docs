@@ -80,6 +80,31 @@ Um Word Dateien nach Markdown zu konvertieren, nutze: ‚pandoc‘
 pandoc -o output.md --extract-media=./ inputfile.docx
 ```
 
+### Token 
+
+Seit dem 14.8.2021 akzeptiert github keine Passwörter mehr zur Übertragung der Daten. Du musst ein Token im Bereich:
+
+```bash
+Settings, Developer Seetings, Personal access token
+```
+erzeugen.
+
+Speicher das Token lokal.
+Bereits bestehende lokalte git Repositories werden wie folgt upgedatet. (Läuft dann auch wieder mit Visual Studio Code)
+
+```bash
+git remote set-url origin https://username:token@github.com/username/repository.git
+```
+Quelle: https://stackoverflow.com/questions/66231282/how-to-add-github-personal-access-token-to-visual-studio-code
+
+Einen manuellen Push erzeigt du wie folgt:
+
+```bash
+https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token
+```
+Quelle: https://stackoverflow.com/questions/18935539/authenticate-with-github-using-a-token
+
+Auf keinen Fall soltest du dein Token im Ordner .git oder im Repository speichern !!!
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
