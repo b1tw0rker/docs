@@ -93,6 +93,7 @@ Deine lokale Datei .git/config ändert sich dadurch wie folgt ab:
 	url = https://username:TOKEN@github.com/username/repository.git
 ```
 
+Du kannst also auch die lokale .git\config Datei manipulieren.
 
 Quelle: https://stackoverflow.com/questions/66231282/how-to-add-github-personal-access-token-to-visual-studio-code
 
