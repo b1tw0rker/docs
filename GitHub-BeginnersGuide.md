@@ -86,6 +86,14 @@ Bereits bestehende lokalte git Repositories werden wie folgt upgedatet. (Läuft 
 ```bash
 git remote set-url origin https://username:token@github.com/username/repository.git
 ```
+Deine lokale Datei .git/config ändert sich dadurch wie folgt ab:
+
+```bash
+[remote "origin"]
+	url = https://username:TOKEN@github.com/username/repository.git
+```
+
+
 Quelle: https://stackoverflow.com/questions/66231282/how-to-add-github-personal-access-token-to-visual-studio-code
 
 Einen manuellen Push erzeigt du wie folgt:
